@@ -48,7 +48,7 @@ No se muestran controles de los personajes en pantalla para mantener la interfaz
 
 El área central queda completamente libre para el mapa y la acción, permitiendo una visión amplia del restaurante y sus pasillos.
 
-![Mockup del HUD durante el gameplay](https://raw.githubusercontent.com/usuario/repositorio/main/mockup_hud.png)
+![Mockup del HUD durante el gameplay](https://github.com/AdrianCastroC/DXPPTarea2/mockup_hud.png)
 
 ---
 
