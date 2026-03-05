@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/AdrianCastroC/DXPPTarea2/main/Logo_DishDash.png)
 # Game Design Document – DISH DASH Restaurante Cooperativo
 
 ---
