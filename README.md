@@ -355,6 +355,7 @@ El aprendizaje se basa en **experimentación directa**, evitando tutoriales inva
 
 ## Gastos
 
+- Compra de ingredientes
 - Compra de estaciones  
 - Mejora de equipos  
 - Desbloqueo de recetas  
