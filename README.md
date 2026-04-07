@@ -413,3 +413,452 @@ Las estéticas describen la experiencia emocional que el juego busca generar:
 - Sensación de progreso a lo largo de los días
 
 ---
+
+# 11. Diseño del nivel (UD04)
+
+## 11.1  Nivel seleccionado
+
+El primer nivel jugable de **DISH DASH Restaurante Cooperativo** corresponde al **Día 1** del restaurante.
+
+Esta jornada funciona como el primer contacto real con el bucle principal del juego: preparar pedidos, coordinar tareas, atender clientes y mantener la satisfacción global dentro de un espacio reducido.
+
+Este planteamiento encaja con el GDD del proyecto, donde cada jornada funciona como un nivel independiente con dificultad progresiva, reinicio del día en caso de fracaso y mantenimiento del progreso global del restaurante.
+
+### Tipo de estructura
+
+La estructura del nivel es **funcional y secuencial**, organizada por áreas de trabajo conectadas entre sí.
+
+Aunque el jugador puede desplazarse libremente por el restaurante, el diseño del nivel empuja a seguir una lógica clara de flujo de trabajo:
+
+Entrada de clientes → asignación de mesa → preparación del pedido → cocinado → emplatado → entrega → limpieza o reorganización
+
+Este enfoque se ajusta a lo trabajado en los apuntes de la unidad, donde se plantea dividir el nivel en áreas o burbujas que respondan a funciones concretas dentro del flujo de juego.
+
+### División por áreas o burbujas
+
+#### Entrada y cola de clientes
+Es la zona por la que acceden los clientes al restaurante.  
+Aquí comienza la presión del nivel, ya que marca el ritmo de llegada de pedidos.
+
+#### Comedor
+Espacio donde se sientan los clientes y esperan ser atendidos.  
+Es una zona clave para la lectura del estado de la partida, porque permite identificar cuántos pedidos están pendientes y cuánto tiempo queda antes de que se agote la paciencia.
+
+#### Zona de preparación
+Área donde se reúnen ingredientes, platos y elementos necesarios para montar cada pedido.  
+Sirve como espacio intermedio entre la recepción del pedido y su cocinado.
+
+#### Zona de cocinado
+Es el núcleo de trabajo principal del nivel.  
+Aquí se realizan las acciones más críticas del servicio y es donde suelen generarse los mayores cuellos de botella.
+
+#### Zona de entrega
+Lugar desde el que el plato finalizado llega al cliente.  
+Representa el cierre del ciclo principal de juego.
+
+#### Zona de apoyo
+Espacio destinado a fregadero, platos usados, apoyo logístico y reorganización rápida del entorno durante el servicio.
+
+### Objetivo del nivel
+
+El objetivo principal de este primer nivel es **completar con éxito la primera jornada del restaurante** manteniendo la satisfacción global en un rango seguro mientras se sirven correctamente los primeros pedidos.
+
+### Objetivos concretos
+
+- Atender a los primeros clientes antes de que pierdan la paciencia.
+- Aprender el flujo básico de trabajo del restaurante.
+- Preparar y entregar correctamente una receta inicial sencilla.
+- Mantener la satisfacción general del restaurante.
+- Finalizar la jornada sin colapso operativo.
+
+### Obstáculos que impiden el progreso
+
+En este nivel los obstáculos no son enemigos tradicionales, sino problemas derivados de la gestión y la coordinación.
+
+#### Obstáculos principales
+
+- Espacio reducido en cocina.
+- Pocas estaciones de trabajo al inicio.
+- Cruces constantes entre jugadores.
+- Tiempo de espera limitado de los clientes.
+- Posibilidad de equivocarse al entregar pedidos.
+- Acumulación de tareas simultáneas.
+- Equipamiento básico todavía poco eficiente.
+
+Estos obstáculos están directamente relacionados con las mecánicas principales ya definidas en el GDD: preparación de platos, interacción con estaciones, sistema de espera de clientes, entrega de pedidos, satisfacción global y escalado progresivo de dificultad.
+
+### Planificación del nivel
+
+El nivel está diseñado con una progresión de intensidad creciente para enseñar al jugador a gestionar el caos de forma controlada.
+
+#### Etapa 1 – Inicio controlado
+Llegan pocos clientes, solo hay una receta básica y el jugador puede reconocer con claridad las distintas áreas del restaurante.  
+La presión es baja y el foco está en comprender el flujo del servicio.
+
+#### Etapa 2 – Aumento de carga
+Comienzan a coincidir varias tareas al mismo tiempo.  
+El jugador debe dividir mejor el trabajo y empieza a percibir que la cocina puede convertirse en un cuello de botella.
+
+#### Etapa 3 – Pico de tensión
+Se acumulan varios pedidos, la paciencia de algunos clientes baja con rapidez y la coordinación entre jugadores se vuelve imprescindible.  
+Aquí aparece por primera vez la sensación real de caos cooperativo.
+
+#### Etapa 4 – Resolución de jornada
+Si el equipo ha gestionado bien el servicio, consigue estabilizar la situación, completar los últimos pedidos y cerrar la jornada con ingresos suficientes para seguir progresando.
+
+### Elementos de ambiente o de script
+
+A medida que avanza el nivel ocurren diversos eventos del sistema que ayudan a reforzar la sensación de servicio real y a comunicar el estado de la partida.
+
+#### Elementos principales
+
+- Entrada progresiva de clientes.
+- Aparición visual de pedidos.
+- Descenso de la barra de paciencia de cada cliente.
+- Actualización de la barra global de satisfacción.
+- Comentarios cortos de clientes al esperar o recibir el plato.
+- Avisos visuales y sonoros cuando un pedido está cerca del fallo.
+- Cierre automático de la jornada cuando termina el servicio.
+
+Estos elementos responden a la fórmula explicada en la unidad: objetivos, obstáculos, situaciones y eventos programados dentro del nivel.
+
+---
+
+## 11.2 Características del nivel
+
+### Entorno
+
+El entorno del nivel es un **restaurante pequeño de inicio**, pensado para transmitir una sensación de negocio humilde pero funcional.
+
+### Ubicación
+
+La ubicación concreta es el **primer local del restaurante**, un espacio compacto que todavía no ha sido ampliado ni optimizado con mejoras avanzadas.
+
+### Temática
+
+La temática del nivel combina dos ideas principales:
+
+- Inicio modesto de un proyecto gastronómico.
+- Caos cooperativo en una cocina bajo presión.
+
+El espacio debe comunicar que el restaurante todavía está en sus primeros días, por lo que su organización es básica, sus recursos son limitados y el margen de error es reducido.
+
+### Tamaño del escenario
+
+El escenario tiene un tamaño **reducido y controlado**.  
+Esto permite:
+
+- Evitar zonas vacías sin utilidad jugable.
+- Facilitar la cooperación entre jugadores.
+- Generar tensión mediante cruces y bloqueos.
+- Hacer comprensible el espacio desde el primer momento.
+
+Esta decisión sigue las recomendaciones de la unidad, que insiste en no crear espacios enormes sin interés mecánico y en diseñar escenarios proporcionados al tipo de juego y a la experiencia buscada.
+
+### Interactividad
+
+El nivel es altamente interactivo porque casi todo el espacio útil está relacionado con una acción de juego.
+
+#### Elementos interactivos del nivel
+
+- Fogones o cocina.
+- Encimeras.
+- Ingredientes.
+- Platos.
+- Mesas de clientes.
+- Mostrador de entrega.
+- Fregadero o zona de apoyo.
+
+Cada elemento cumple una función dentro del circuito principal del restaurante, reforzando la idea de que el escenario no es un simple decorado, sino una parte activa del sistema jugable. Esta idea también aparece en la unidad cuando se indica que el escenario debe tratarse como un elemento conectado con las mecánicas y la experiencia del jugador.
+
+### Puntos de referencia del nivel
+
+Los puntos de referencia son fundamentales para que el jugador se oriente y lea rápidamente el espacio.
+
+#### Puntos focales principales
+
+- Cocina principal.
+- Mostrador de entrega.
+- Comedor.
+- Entrada de clientes.
+
+Estos puntos ayudan a identificar con rapidez dónde se genera cada parte del flujo del servicio y sirven como referencia visual durante los momentos de mayor tensión.
+
+### Ritmo del nivel
+
+El ritmo del primer nivel sigue una curva sencilla y progresiva:
+
+- Inicio tranquilo.
+- Incremento gradual de presión.
+- Pico de caos controlado.
+- Cierre y recompensa.
+
+Esto permite introducir la experiencia central del juego sin saturar al jugador desde el primer minuto.
+
+### Proporción y circulación
+
+La circulación del espacio está diseñada para provocar cooperación, pero también pequeños conflictos de movimiento que obliguen a mejorar la organización del equipo.
+
+Los desplazamientos son cortos, pero las trayectorias se cruzan con frecuencia, generando situaciones donde la distribución del trabajo y el posicionamiento dentro del espacio resultan tan importantes como la propia receta.
+
+---
+
+# 12. Referencias visuales
+
+### Inspiración principal
+
+El diseño del primer nivel se inspira principalmente en referentes de juegos cooperativos de cocina y gestión, así como en espacios reales de restauración compacta.
+
+### Referencias de videojuegos
+
+#### Overcooked
+Aporta una referencia clara en cuanto a:
+- lectura rápida del espacio,
+- distribución por zonas funcionales,
+- caos cooperativo,
+- necesidad de coordinación constante.
+
+#### PlateUp!
+Aporta inspiración en:
+- organización del restaurante,
+- optimización del layout,
+- importancia de la colocación de objetos,
+- progresión del local entre jornadas.
+
+Estas referencias ya estaban recogidas en el GDD base del proyecto y siguen siendo las más adecuadas para orientar el diseño del nivel inicial. 
+
+### Referencias espaciales y artísticas
+
+Además de los referentes jugables, el nivel toma inspiración de:
+
+- cocinas industriales pequeñas,
+- restaurantes de comida rápida con distribución compacta,
+- planos cenitales de locales de restauración,
+- espacios donde cocina y comedor están muy próximos,
+- diseños visuales cálidos para comedor y neutros para cocina.
+
+### Intención visual del nivel
+
+Visualmente, el primer nivel debe transmitir:
+
+- restaurante pequeño,
+- entorno legible,
+- sensación de actividad constante,
+- espacio acogedor pero limitado,
+- contraste entre zona de clientes y zona de trabajo interno.
+
+### Art Bible del nivel
+
+La Art Bible del primer nivel se basa en estos principios:
+
+- Lectura clara desde cámara cenital o isométrica.
+- Separación visual entre cocina y comedor.
+- Colores cálidos para la zona de clientes.
+- Colores más neutros o fríos para la cocina.
+- Objetos grandes y reconocibles para facilitar la legibilidad.
+- Diseño visual coherente con una experiencia cooperativa rápida y accesible.
+
+---
+
+# 13. Elementos del nivel
+
+### Listado 1 – Assets y objetos del escenario
+
+#### Estructuras y mobiliario
+- Paredes del restaurante
+- Suelo de cocina
+- Suelo de comedor
+- Puerta de entrada
+- Mesas
+- Sillas
+
+#### Equipamiento de cocina
+- Fogón o cocina
+- Encimeras
+- Fregadero
+- Nevera
+- Zona de platos
+- Superficie de apoyo
+
+#### Elementos visuales de ambiente
+- Lámparas
+- Decoración básica del comedor
+- Carteles o menú
+- Caja registradora
+- Elementos decorativos simples del local
+
+### Listado 2 – Elementos jugables y sistémicos
+
+#### Elementos de cliente
+- Cliente estándar
+- Paciencia individual
+- Pedido visible
+- Estado de satisfacción
+
+#### Elementos de servicio
+- Plato preparado
+- Pedido correcto
+- Pedido incorrecto
+- Tiempo de espera
+- Entrega completada
+
+#### Elementos de sistema
+- Barra global de satisfacción
+- Temporizador de jornada
+- Ingresos del día
+- Fin de jornada
+- Reinicio del día en caso de fracaso
+
+### Listado 3 – Obstáculos y presión del nivel
+
+#### Obstáculos espaciales
+- Cocina estrecha
+- Cruces entre jugadores
+- Poca separación entre estaciones
+
+#### Obstáculos temporales
+- Paciencia limitada
+- Acumulación de pedidos
+- Tiempo de servicio ajustado
+
+#### Obstáculos operativos
+- Equipamiento lento
+- Errores de coordinación
+- Mala asignación de tareas
+- Saturación del espacio de trabajo
+
+### Listado 4 – Recompensas y progresión
+
+#### Recompensas del nivel
+- Dinero por pedidos completados
+- Bonus por satisfacción alta
+- Bonus por completar bien la jornada
+
+#### Recompensas de progresión
+- Mejora de equipamiento
+- Compra de nuevas estaciones
+- Optimización futura del restaurante
+- Posibilidad de afrontar jornadas posteriores con mejor eficiencia
+
+---
+
+# 14. Música y sonido
+
+### Función del sonido en el nivel
+
+El sonido en el primer nivel tiene una función doble:
+
+- comunicar información útil al jugador,
+- reforzar la atmósfera de restaurante activo y cooperativo.
+
+La unidad indica que deben clasificarse los sonidos por familias y diseñarse un mapa sonoro teniendo en cuenta el audio listener, las fuentes de sonido y las posibles zonas de reverberación.
+
+### Familias de sonido del nivel
+
+#### DX – Diálogo
+Corresponde a las voces o expresiones verbales del juego.
+
+Ejemplos:
+- frases cortas de clientes al entrar,
+- quejas cuando esperan demasiado,
+- expresiones de satisfacción al recibir el plato,
+- avisos breves del sistema de jornada.
+
+#### MX – Música
+Corresponde a la música de fondo del nivel.
+
+Ejemplos:
+- música base suave y dinámica durante el servicio,
+- aumento de intensidad en momentos de mayor presión,
+- música de final de jornada en función del resultado.
+
+#### SFX – Efectos de sonido
+Sonidos asociados a objetos, acciones y eventos del sistema.
+
+Ejemplos:
+- sonido de cocinar,
+- sonido de servir platos,
+- sonido de caja registradora,
+- aviso de pedido completado,
+- aviso de error,
+- temporizador o señal de urgencia.
+
+#### FOL – Foley
+Sonidos generados directamente por las acciones del jugador.
+
+Ejemplos:
+- pasos de los cocineros,
+- coger y soltar platos,
+- manipular ingredientes,
+- abrir o cerrar elementos del mobiliario,
+- desplazamiento rápido por cocina.
+
+#### BG – Fondos de ambiente
+Sonidos ambientales que dan vida al espacio.
+
+Ejemplos:
+- murmullo de comedor,
+- ruido suave de cocina,
+- ventilación,
+- ambiente general del local,
+- sonido exterior tenue si se percibe desde la entrada.
+
+### Mapa sonoro del nivel
+
+### Audio Listener
+El audio listener debe situarse en la cámara principal compartida, ya que representa el punto general desde el que el jugador percibe el entorno durante la jornada.
+
+### Fuentes de audio principales
+
+#### Fuentes 2D
+Se utilizarán para sonidos no dependientes de posición concreta:
+- música de fondo,
+- avisos globales del sistema,
+- interfaz sonora,
+- algunos refuerzos de feedback.
+
+#### Fuentes 3D
+Se utilizarán para sonidos ligados al espacio físico del restaurante:
+- fogones,
+- fregadero,
+- caja registradora,
+- entrada del local,
+- zona de clientes,
+- área de entrega.
+
+### Zonas del mapa sonoro
+
+#### Entrada
+Sonidos suaves de puerta, llegada de clientes y transición desde el exterior.
+
+#### Comedor
+Murmullo de clientes, pequeños comentarios y ambiente general de restaurante.
+
+#### Cocina
+Zona con mayor densidad sonora:
+- cocinado,
+- utensilios,
+- pasos,
+- preparación,
+- sonidos de trabajo repetidos.
+
+#### Entrega
+Pequeños sonidos de confirmación al servir correctamente y refuerzo auditivo de cierre de pedido.
+
+### Reverberación
+
+En el primer nivel no es necesario exagerar el uso de reverberación, pero sí puede contemplarse una ligera diferencia entre cocina y comedor para reforzar la sensación de espacio interior dividido.
+
+### Objetivo del diseño sonoro
+
+El objetivo sonoro del nivel es:
+
+- hacer comprensible el estado del servicio,
+- reforzar la presión temporal,
+- mejorar la inmersión,
+- dar feedback inmediato al jugador,
+- evitar saturación auditiva manteniendo claridad en los sonidos importantes.
+
+Esto se alinea con lo indicado en la unidad sobre la utilidad del sonido para transmitir acciones, estado del entorno, atmósfera y progreso del jugador.
+
+---
